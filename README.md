@@ -22,3 +22,12 @@ First I looked at the extreme poverty rate year over year to look at the trend a
 ## Question 2
 
 
+## Question 3
+
+For question 3, we are looking at the relationship between GDP Per Capita, Life Expectancy, and Mortality Rate over time. To do this, I leveraged multiple line charts plotting by year to look at how each of these variables changed over time. I then looked at a pairwise plot between the 3 variables to see if I could identify any strong correlation between the variables.
+
+![Screenshot](dual_plot.png)
+![Screenshot](gdp_per_year.png)
+
+Looking at these charts, it would be fairly easy to draw a conclusion that all of these variables are related to each. It makes sense there is a strong relationship between GDP Per Capita rising with a rise in Life Expectancy and a decrease in Mortality Rate. However, it is also clear that GDP Per Capita has risen much slower than life expectancy and the mortality rate has decreases at a slower clip than the rise in GDP, leading me to believe their are other factors that have a strong impact on these rates. Much of the improvement in Life Expectancy and Mortality Rates likely has to do with improvements in medicine and access to clean water/sanitation more so than the GDP Per Capita.
+
