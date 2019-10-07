@@ -11,7 +11,7 @@ country_url = 'https://raw.githubusercontent.com/open-numbers/ddf--gapminder--sy
 health_spending_url = 'https://raw.githubusercontent.com/open-numbers/ddf--gapminder--systema_globalis/master/ddf--datapoints--government_health_spending_per_person_international_dollar--by--geo--time.csv'
 long_term_unemplyment_url = 'https://raw.githubusercontent.com/open-numbers/ddf--gapminder--systema_globalis/master/ddf--datapoints--long_term_unemployment_rate_percent--by--geo--time.csv'
 
-# Data
+
 # read dataset
 country_df = pd.read_csv(country_url)
 health_spending_df = pd.read_csv(health_spending_url, skiprows=1, names=['Geo','Year','health_spending'])
@@ -38,9 +38,8 @@ df['log_health_spend'] = np.log10(df['health_spending'])
 df.rename(columns={'world_4region':'Continent'}, inplace=True)
 
 
-# Seaborn visualization library
-import seaborn as sns
-# Create the default pairplot
+
+# create pairplot
 sns.pairplot(df, 
              vars = ['long_term_unemployement', 'log_health_spend'], 
              hue = 'Continent', diag_kind = 'kde', 

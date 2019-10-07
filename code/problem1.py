@@ -68,12 +68,3 @@ plt.show()
 
 
 
-# create radial chart to show comparisons
-'''
-ax = plt.subplot(projection='polar')
-ax.barh(0, math.radians(150))
-ax.barh(1, math.radians(300))
-ax.barh(2, math.radians(270))
-ax.barh(3, math.radians(320))
-'''
-

@@ -12,7 +12,7 @@ infant_mortaility_url = 'https://raw.githubusercontent.com/open-numbers/ddf--gap
 life_expectancy_url = 'https://raw.githubusercontent.com/open-numbers/ddf--gapminder--systema_globalis/master/ddf--datapoints--life_expectancy_years--by--geo--time.csv'
 
 
-# Data
+
 # read dataset
 country_df = pd.read_csv(country_url)
 gdp_df = pd.read_csv(gdp_url, skiprows=1, names=['Geo','Year','gdp_per_capita'])
@@ -20,7 +20,7 @@ infant_mortality_df = pd.read_csv(infant_mortaility_url, skiprows=1, names=['Geo
 life_expectancy_df = pd.read_csv(life_expectancy_url, skiprows=1, names=['Geo','Year','life_expectancy'])
 
 
-# add country information 
+# add country information and merge datasets
 df = pd.merge(gdp_df,
             country_df[['country','name','latitude','longitude', 'world_4region']],
             left_on = 'Geo', 
@@ -48,6 +48,7 @@ life_expectancy_by_year = pd.DataFrame(df.groupby(['Year','Continent']).life_exp
 
 
 # set image size
+#uncomment when running mutlichart
 #rcParams['figure.figsize'] = 10, 5
 
 # create mutlichart plot with gdp by year and poverty rate by year
@@ -60,6 +61,7 @@ fig.show()
 '''
 
 # plot life expectancy by year
+# uncomment to run GDP Capita plot
 #sns.lineplot('Year', 'gdp_per_capita', data=gdp_by_year, hue='Continent').set( ylabel='GDP Per Capita', title='GDP Per Capita by Year')
 
 

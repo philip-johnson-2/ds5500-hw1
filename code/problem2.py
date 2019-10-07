@@ -1,19 +1,13 @@
 '''
 Problem 2:
-In the last 20 years the proportion of people living in extreme poverty worldwide, has...? 
 
-Below the extreme poverty dataset from the GapMinder github account will be used 
-to look at the difference between the proportion of people living in poverty 
-now compared to 20 years ago
+Compare the GDP per capita today to 20 years ago
 '''
 
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plotly
 import plotly.graph_objects as go
-
-
-
 
 # assign github URLs
 country_url = 'https://raw.githubusercontent.com/open-numbers/ddf--gapminder--systema_globalis/master/ddf--entities--geo--country.csv'
@@ -38,10 +32,8 @@ years = ['2010']
 
 df = data[data.Year.isin(years)]
 df['Geo'] = df['Geo'].str.upper()
-#print(df['Geo'].upper()
 
-
-
+# plot maps
 fig = go.Figure(data=go.Choropleth(
     locations = df['Geo'],
     z = round(df['GDP Per Capita'],2),

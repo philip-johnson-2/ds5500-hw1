@@ -34,25 +34,20 @@ df = data[data.Year.isin(years)]
 df['Geo'] = df['Geo'].str.upper()
 
 
+# assign color scale
 scl = [[0.0, '#ffffff'],[0.2, '#ff9999'],[0.4, '#ff4d4d'], 
        [0.6, '#ff1a1a'],[0.8, '#cc0000'],[1.0, '#4d0000']] # reds	
 
-
-### create empty list for data object:    
-
+# create empty list for data object:    
 data_slider = []
 
-
-#### I populate the data object
-
+# populate the slider
 for year in df.Year.unique():
 
-
-    # I select the year 
+    # assign year
     df_year = df[df['Year']== year]
 
-    
-    ### create the dictionary with the data for the current year
+    # create the dictionary with the data for the current year
     data_one_year = dict(
                         type='choropleth',
                         locations = df_year['Geo'],
@@ -61,12 +56,9 @@ for year in df.Year.unique():
                         colorscale = scl,
                         )
 
-    data_slider.append(data_one_year)  # I add the dictionary to the list of dictionaries for the slider
+    data_slider.append(data_one_year)  # add the dictionary to the list of dictionaries for the slider
 
-
-
-##  I create the steps for the slider
-
+# create the steps for the slider
 steps = []
 
 for i in range(len(data_slider)):
@@ -75,29 +67,18 @@ for i in range(len(data_slider)):
                 label='Year {}'.format(i + 1960)) # label to be displayed for each step (year)
     step['args'][1][i] = True
     steps.append(step)
-
-
 	
-##  I create the 'sliders' object from the 'steps' 
-
+# create the 'sliders' object from the 'steps' 
 sliders = [dict(active=0, pad={"t": 1}, steps=steps)]  
 
-
-# I set up the layout (including slider option)
-
+# set up the layout (including slider option)
 layout = dict(sliders=sliders)
-
-
 	
-# I create the figure object:
-
+# create the figure object:
 fig = dict(data=data_slider, layout=layout) 
 
 
-
-	
-# to plot in the notebook
-
+# plot map
 plotly.offline.iplot(fig)
 
 
