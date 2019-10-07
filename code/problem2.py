@@ -13,6 +13,8 @@ import matplotlib.pyplot as plotly
 import plotly.graph_objects as go
 
 
+
+
 # assign github URLs
 country_url = 'https://raw.githubusercontent.com/open-numbers/ddf--gapminder--systema_globalis/master/ddf--entities--geo--country.csv'
 gdp_url = 'https://raw.githubusercontent.com/open-numbers/ddf--gapminder--systema_globalis/master/ddf--datapoints--gdppercapita_us_inflation_adjusted--by--geo--time.csv'
@@ -39,8 +41,6 @@ df['Geo'] = df['Geo'].str.upper()
 #print(df['Geo'].upper()
 
 
-import plotly.graph_objects as go
-import pandas as pd
 
 fig = go.Figure(data=go.Choropleth(
     locations = df['Geo'],
@@ -56,7 +56,7 @@ fig = go.Figure(data=go.Choropleth(
 ))
 
 fig.update_layout(
-    title_text='2010 Global GDP',
+    title_text='2000 Global GDP',
     geo=dict(
         showframe=False,
         showcoastlines=False,

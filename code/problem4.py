@@ -2,8 +2,10 @@
 Problem 4
 
 For this problem, I wanted to look and see if their is a relationship between 
-healthcare spending per capita and life expectancy. 
+healthcare spending per capita and long term unemployment. 
 '''
+import pandas as pd
+import seaborn as sns
 
 country_url = 'https://raw.githubusercontent.com/open-numbers/ddf--gapminder--systema_globalis/master/ddf--entities--geo--country.csv'
 health_spending_url = 'https://raw.githubusercontent.com/open-numbers/ddf--gapminder--systema_globalis/master/ddf--datapoints--government_health_spending_per_person_international_dollar--by--geo--time.csv'

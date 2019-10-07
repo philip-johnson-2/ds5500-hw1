@@ -48,26 +48,25 @@ life_expectancy_by_year = pd.DataFrame(df.groupby(['Year','Continent']).life_exp
 
 
 # set image size
-rcParams['figure.figsize'] = 10, 5
+#rcParams['figure.figsize'] = 10, 5
 
 # create mutlichart plot with gdp by year and poverty rate by year
 # uncomment to run mutlichart plot
-
+'''
 fig, ax = plt.subplots(1,2)
 sns.lineplot('Year', 'life_expectancy', data=life_expectancy_by_year, hue='Continent', ax=ax[0]).set(ylabel='Life Expectancy in Years', title='Life Expectancy by Year')
 sns.lineplot('Year', 'mortality_rate', data=mortality_by_year, hue='Continent', ax=ax[1]).set( ylabel='Mortality Rate', title='Mortality Rate by Year')
 fig.show()
-
+'''
 
 # plot life expectancy by year
-#sns.lineplot('Year', 'gdp_per_capita', data=gdp_by_year, hue='world_4region').set( ylabel='GDP Per Capita', title='GDP Per Capita by Year')
+#sns.lineplot('Year', 'gdp_per_capita', data=gdp_by_year, hue='Continent').set( ylabel='GDP Per Capita', title='GDP Per Capita by Year')
 
 
-'''
+
 # Create the default pairplot
 sns.pairplot(df, 
              vars = ['gdp_per_capita', 'mortality_rate','life_expectancy'], 
              hue = 'Continent', diag_kind = 'kde', 
              plot_kws = {'alpha': 0.6, 's': 80, 'edgecolor': 'k'},
              size = 4);
-'''
