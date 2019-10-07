@@ -18,7 +18,7 @@ First I looked at the extreme poverty rate year over year to look at the trend a
 ![Screenshot](poverty_rate_by_year.png)
 
 The GapMinder test stated that the extreme poverty rate has almost halved in the last 20 years. Based on this chart, we can see
-that that looks to be true. 
+that that looks to be true. In 2015, the average rate of extreme poverty gloabally was about 25% compared to just under 40% in 1995, nearly half in the 20 year period. One thing to note of issue with this dataset is that not each country has a value for each year, so years can be skewed by the presence or absence of certain countries that could shift averages.
 
 
 ## Question 2
@@ -27,6 +27,8 @@ For question 2, I looked at the change in Global GDP over time across the globe.
 
 ![Screenshot](1980_global_gdp.png)
 ![Screenshot](2000_global_gdp.png)
+
+It looks as though the GDP per capita rises for most countries, in line with expectations even after adjusting for inflation. This data also suffers from the same issue in question 1 where each country does not have a value for every year so certain years can have skewed data based on the presence or absence of certain countries. The best way to control for this would be to ensure you are comparing years that have the same country representation. 
 
 
 ## Question 3
@@ -40,6 +42,8 @@ Looking at these charts, it would be fairly easy to draw a conclusion that all o
 
 ![Screenshot](question3_pairwise.png)
 
+These plots help to show that their is a negative correlation between life expectancy and mortality rates as expected as well as highlightin the positive correlation between GDP Per Capita and Life expectancy.
+
 
 ## Question 4
 
@@ -52,7 +56,7 @@ Based on the pairwise plot above, we can see that their actually looks to be the
 
 ## Question 5
 
-For this assignment, I leveraged static plots for most of the visualizations. I attempted to leverage a dynamic map chart that would have used a sliding scale that would change the year that is being displayed for GDP Per Capita.
+For this assignment, I leveraged static plots for most of the visualizations. I attempted to leverage a dynamic map chart that would have used a sliding scale that would change the year that is being displayed for GDP Per Capita. However, I was having issues rending the slide scale.
 
 Advantages of Interactive Charts:
 The biggest advantage of using interactive charts is that it gives the user/viewer of the visualizations more freedom in exploring the data themselves. The user can come up with their own questions they would like to answer and try and explore and come up with a solution themselves. 
